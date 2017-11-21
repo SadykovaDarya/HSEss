@@ -6,7 +6,7 @@ public class StudentController : MonoBehaviour {
     public Camera cam;
 
     private float maxWidth;
-    private bool canControl;
+    //private bool canControl;
     // Use this for initialization
     void Start () {
         if (cam == null)
@@ -17,24 +17,22 @@ public class StudentController : MonoBehaviour {
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
         float studentWidth = GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - studentWidth;
-        canControl = false;
+       // canControl = false;
     }
 
     void FixedUpdate()
     {
-        if (canControl)
-        {
             Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
             Vector3 targetPosition = new Vector3(rawPosition.x, 0.0f, 0.0f);
             float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
             targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
             GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-        }
+        
 
     }
 
-    public void ToggleControl(bool toggle)
+   /* public void ToggleControl(bool toggle)
     {
         canControl = toggle;
-    }
+    }*/
 }
