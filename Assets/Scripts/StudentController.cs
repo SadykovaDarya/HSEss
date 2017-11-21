@@ -17,7 +17,7 @@ public class StudentController : MonoBehaviour {
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
         float studentWidth = GetComponent<Renderer>().bounds.extents.x;
         maxWidth = targetWidth.x - studentWidth;
-       // canControl = false;
+        //canControl = false;
     }
 
     void FixedUpdate()
@@ -31,8 +31,8 @@ public class StudentController : MonoBehaviour {
 
     }
 
-   /* public void ToggleControl(bool toggle)
+   public void ToggleControl(bool toggle)
     {
-        canControl = toggle;
-    }*/
+       // canControl = toggle;
+    }
 }
