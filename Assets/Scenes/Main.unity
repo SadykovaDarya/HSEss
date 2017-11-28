@@ -123,12 +123,11 @@ GameObject:
   - component: {fileID: 541628859}
   - component: {fileID: 541628862}
   - component: {fileID: 541628861}
-  - component: {fileID: 541628863}
   - component: {fileID: 541628865}
   - component: {fileID: 541628864}
   - component: {fileID: 541628866}
   m_Layer: 0
-  m_Name: darya
+  m_Name: Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108670807
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 601e4a2f13d549349a5e7ffb050385a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8deb7e1e53b2c8541b3ee25e61964eda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -185,8 +184,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 541628858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.246, y: 0.348, z: 0}
-  m_LocalScale: {x: -1.208899, y: 1.2782301, z: 1}
+  m_LocalPosition: {x: 0, y: -0.65, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -223,37 +222,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!68 &541628863
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 541628858}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0.24256666, y: -0.7621268}
-  - {x: -0.24739987, y: -0.777654}
-  - {x: -0.49435133, y: -0.42029628}
-  - {x: -0.17829973, y: -0.082902916}
-  - {x: -0.45418388, y: 0.15214086}
-  - {x: -0.5343969, y: 0.6051031}
-  - {x: -0.31526166, y: 0.8646559}
-  - {x: 0.023450255, y: 0.9554943}
-  - {x: 0.45956415, y: 0.85217506}
-  - {x: 0.5792987, y: 0.33945894}
-  - {x: 0.4276746, y: 0.04441704}
-  - {x: 0.24294579, y: -0.07797745}
-  - {x: 0.48071575, y: -0.3227641}
-  - {x: 0.47856826, y: -0.6325578}
-  - {x: 0.27027816, y: -0.83321714}
-  - {x: -0.20396596, y: -0.8337798}
 --- !u!114 &541628864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,10 +249,18 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.68097144, y: 0.5948143}
+  - {x: 0.2145375, y: -0.024303377}
+  - {x: 0.4054408, y: -0.26116443}
+  - {x: 0.42357004, y: -0.70143}
+  - {x: -0.36535954, y: -0.71683973}
+  - {x: -0.40361768, y: -0.38908815}
+  - {x: -0.19781886, y: 0.045831844}
+  - {x: -0.46686533, y: 0.14857905}
+  - {x: -0.44526917, y: 0.67663485}
   - {x: 0.010529222, y: 0.9913566}
-  - {x: 0.60920334, y: 0.7126905}
-  - {x: 0.6510218, y: 0.4107049}
+  - {x: 0.50970244, y: 0.7016348}
+  - {x: 0.530091, y: 0.17358197}
+  - {x: 0.2419624, y: -0.031521842}
 --- !u!82 &541628866
 AudioSource:
   m_ObjectHideFlags: 0
@@ -409,11 +385,11 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -2.2920494, y: 4.6123238}
-  - {x: -2.0968995, y: -4.852298}
-  - {x: 1.56839, y: -5.2446904}
-  - {x: 5.3157535, y: -4.5771756}
-  - {x: 5.0829473, y: 4.7004576}
+  - {x: -7.1401024, y: 6.472778}
+  - {x: -6.968833, y: -4.571473}
+  - {x: 1.4993495, y: -4.5799694}
+  - {x: 9.736909, y: -4.645485}
+  - {x: 9.704755, y: 6.3962893}
 --- !u!4 &913696062
 Transform:
   m_ObjectHideFlags: 0
@@ -561,7 +537,7 @@ GameObject:
   - component: {fileID: 2060037951}
   - component: {fileID: 2060037953}
   m_Layer: 0
-  m_Name: background
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -601,7 +577,7 @@ SpriteRenderer:
   m_SortingLayerID: -1083799565
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 58bac2bba4c7b1444b2b6ba6e0bd3b4f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 064583d35d8caea4394c909cbeac8a8d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -618,7 +594,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2060037950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 2, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

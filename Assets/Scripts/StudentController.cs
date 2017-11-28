@@ -16,7 +16,7 @@ public class StudentController : MonoBehaviour {
         Vector3 upperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
         float studentWidth = GetComponent<Renderer>().bounds.extents.x;
-        maxWidth = targetWidth.x - studentWidth;
+        maxWidth = targetWidth.x - studentWidth / 2;
         //canControl = false;
     }
 
@@ -27,8 +27,6 @@ public class StudentController : MonoBehaviour {
             float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
             targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
             GetComponent<Rigidbody2D>().MovePosition(targetPosition);
-        
-
     }
 
    public void ToggleControl(bool toggle)
