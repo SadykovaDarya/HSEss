@@ -1,36 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class StudentController : MonoBehaviour {
-    public Camera cam;
+    
+    public float force = 200f;
+    float objectSpeed = 0f;
 
-    private float maxWidth;
-    //private bool canControl;
-    // Use this for initialization
-    void Start () {
-        if (cam == null)
-        {
-            cam = Camera.main;
+    void UpdateSpeed() {
+        objectSpeed = GetComponent<Rigidbody2D>().velocity.x;
+    }
+
+
+    void PushLeft() {
+        GetComponent<Rigidbody2D>().AddForce(new Vector3(-force, 0f));
+        UpdateSpeed();
+    }
+
+    void PushRight() {
+        GetComponent<Rigidbody2D>().AddForce(new Vector3(force, 0f));
+        UpdateSpeed();
+    }
+
+    
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
+            if (objectSpeed > 0)
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            PushLeft();
         }
-        Vector3 upperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
-        Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
-        float studentWidth = GetComponent<Renderer>().bounds.extents.x;
-        maxWidth = targetWidth.x - studentWidth / 2;
-        //canControl = false;
+        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
+            if(objectSpeed < 0)
+                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+            PushRight();
+        }
     }
 
-    void FixedUpdate()
-    {
-            Vector3 rawPosition = cam.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 targetPosition = new Vector3(rawPosition.x, 0.0f, 0.0f);
-            float targetWidth = Mathf.Clamp(targetPosition.x, -maxWidth, maxWidth);
-            targetPosition = new Vector3(targetWidth, targetPosition.y, targetPosition.z);
-            GetComponent<Rigidbody2D>().MovePosition(targetPosition);
+    void FixedUpdate() { 
+        UpdateSpeed();
     }
 
-   public void ToggleControl(bool toggle)
-    {
-       // canControl = toggle;
-    }
 }
