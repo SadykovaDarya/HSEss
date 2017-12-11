@@ -219,6 +219,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Ability.cs" />
+    <Compile Include="Assets\Scripts\AbilityCoolDown.cs" />
+    <Compile Include="Assets\Scripts\AddTimeAbility.cs" />
+    <Compile Include="Assets\Scripts\AddTimeTriggerable.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\markBehavior.cs" />
     <Compile Include="Assets\Scripts\StudentController.cs" />
