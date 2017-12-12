@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: f30917c2e7ccc8645ab74a8c9cfab6de
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 6849518cfd745eb43a8f16d65c7affc9
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 56198d5e4745aeb4c9eb6800742112a2
+  - enabled: 1
+    path: Assets/Scenes/DoodleJump.unity
+    guid: 8369bf64ea2b14760abb9ef56e50abdf
