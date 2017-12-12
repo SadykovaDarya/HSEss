@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CharacterSelector : MonoBehaviour {
 
@@ -9,15 +8,13 @@ public class CharacterSelector : MonoBehaviour {
     public Vector3 playerSpawnPosition = new Vector3(520, 400, 0);
     public Character[] characters;
     public GameObject characterSelectPanel;
-    public GameObject gameSelectPanel;
-    
+    public GameObject abilityPanel;
+    public GameObject GameObject;
 
-
-    public void StartGame(int characterChoise)
+	public void StartGame(int characterChoise)
     {
         characterSelectPanel.SetActive(false);
-        gameSelectPanel.SetActive(true);
-
+        abilityPanel.SetActive(true);
         player.GetComponent<SpriteRenderer>().sprite = characters[characterChoise].cSprite;
         GameObject spawnedPlayer = Instantiate(player, playerSpawnPosition, Quaternion.identity) as GameObject;
         
@@ -26,20 +23,10 @@ public class CharacterSelector : MonoBehaviour {
 
         for (int i = 0; i < coolDownButtons.Length; i++)
         {
-            coolDownButtons[i].Initialize(selectedCharacter.characterAbilities[i]);
+            coolDownButtons[i].Initialize(selectedCharacter.characterAbilities[i], GameObject );
 
         }
 
 
-    }
-
-    public void GoToCatch()
-    {
-        SceneManager.LoadScene("Main");
-    }
-
-    public void GoToDoodle()
-    {
-        SceneManager.LoadScene("DoodleJump");
     }
 }
