@@ -17,16 +17,16 @@ public class AbilityCoolDown : MonoBehaviour {
     private float coolDownTimeLeft;
 
     public void Start() {
-        Initialize(ability, fallingMarks);
+        Initialize(ability);
     }
 
     public void Update()
     {
-        bool coolDownComplete = (Time.time > nextReadyTime);
-        if(coolDownComplete)
+       /* bool coolDownComplete = (Time.time > nextReadyTime);
+        if (coolDownComplete)
         {
             AbilityReady();
-            if(Input.GetButtonDown(abilityButtonAxisName))
+            if (Input.GetButtonDown(abilityButtonAxisName))
             {
                 ButtonTriggered();
             }
@@ -34,15 +34,14 @@ public class AbilityCoolDown : MonoBehaviour {
             {
                 CoolDown();
             }
-        }
+        }*/
     }
-    public void Initialize(Ability selectedAbility, GameObject FallingMarks)
+    public void Initialize(Ability selectedAbility)
     {
         ability = selectedAbility;
-        fallingMarks = FallingMarks;
         myButtonImage = GetComponent<Image>();
         abilitySource = GetComponent<AudioSource>();
-        myButtonImage.sprite = ability.aSprite;
+       // myButtonImage.sprite = ability.aSprite;
         coolDownDuration = ability.aCoolDown;
         ability.Initialize(fallingMarks);
         AbilityReady();

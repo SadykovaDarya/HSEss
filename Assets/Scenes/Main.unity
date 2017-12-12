@@ -666,6 +666,7 @@ GameObject:
   - component: {fileID: 643752269}
   - component: {fileID: 643752271}
   - component: {fileID: 643752270}
+  - component: {fileID: 643752272}
   m_Layer: 5
   m_Name: CoolDownText
   m_TagString: Untagged
@@ -730,6 +731,23 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 643752268}
+--- !u!114 &643752272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 643752268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4015d3bfb21153f41a180f360ac81c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityButtonAxisName: AddTime
+  Mask: {fileID: 1398618451}
+  CoolDownText: {fileID: 643752270}
+  ability: {fileID: 0}
+  fallingMarks: {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978,
+    type: 2}
 --- !u!1 &1173064085
 GameObject:
   m_ObjectHideFlags: 0
