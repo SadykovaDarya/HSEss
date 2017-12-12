@@ -9,6 +9,7 @@ public class CharacterSelector : MonoBehaviour {
     public Character[] characters;
     public GameObject characterSelectPanel;
     public GameObject abilityPanel;
+    public GameObject GameObject;
 
 	public void StartGame(int characterChoise)
     {
@@ -22,7 +23,7 @@ public class CharacterSelector : MonoBehaviour {
 
         for (int i = 0; i < coolDownButtons.Length; i++)
         {
-            coolDownButtons[i].Initialize(selectedCharacter.characterAbilities[i]);
+            coolDownButtons[i].Initialize(selectedCharacter.characterAbilities[i], GameObject );
 
         }
 
