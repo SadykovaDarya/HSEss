@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 
     public Camera cam;
-    public GameObject mark;
+    public GameObject[] balls;
     private float maxWidth;
     public float timeleft;
     public Text timerText;
@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour {
         }
         Vector3 upperCorner = new Vector3(Screen.width, Screen.height, 0.0f);
         Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
-        float ballWidth = mark.GetComponent<SpriteRenderer>().bounds.extents.x;
+        float ballWidth = balls[0].GetComponent<SpriteRenderer>().bounds.extents.x;
         maxWidth = targetWidth.x - ballWidth;
         StartCoroutine(Spawn());
         UpdateText();
@@ -43,13 +43,14 @@ public class GameController : MonoBehaviour {
 
     public IEnumerator Spawn() {
        yield return new WaitForSeconds(2.0f);
-        while (timeleft>0) { 
+        while (timeleft>0) {
+            GameObject ball = balls[Random.Range(0, balls.Length)];
             Vector3 spawnPosition = new Vector3(
                Random.Range(-maxWidth, maxWidth),
                 transform.position.y, 0.0f
             );
             Quaternion spawnRotation = Quaternion.identity;
-            Instantiate(mark, spawnPosition, spawnRotation);
+            Instantiate(ball, spawnPosition, spawnRotation);
            
             yield return new WaitForSeconds(Random.Range(1.0f,2.0f));
         }

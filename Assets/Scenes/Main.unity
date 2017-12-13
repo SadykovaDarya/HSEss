@@ -669,7 +669,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  mark: {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978, type: 2}
+  balls:
+  - {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978, type: 2}
+  - {fileID: 1335689648161726, guid: 24ee55b9c1521714b8bb0e01c8e7c8f9, type: 2}
   timeleft: 5
   timerText: {fileID: 1553059157}
   gameOverText: {fileID: 1890884253}
