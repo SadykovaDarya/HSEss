@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Sonya
   cSprite: {fileID: 21300000, guid: 9b9305cbb152ce944b947537607c1603, type: 3}
-  characterAbilities: []
+  characterAbilities:
+  - {fileID: 11400000, guid: 0dd0b76b6a80c8840bed4e5adaf2d16e, type: 2}

@@ -5,18 +5,20 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "Abilities/DAbility")]
 public class DAbility : Ability {
 
-    private DAbilityTriggerable dAtrigger;
+    private markBehavior dAtrigger;
+    [SerializeField] private GameObject fallingMarks;
 
-    public override void Initialize(GameObject obj)
+    public override void Initialize()
     {
-        dAtrigger = obj.GetComponent<DAbilityTriggerable>();
-        dAtrigger.Initialize();
+        dAtrigger = fallingMarks.GetComponent<markBehavior>();
 
 
     }
     public override void TriggerAbility()
-    {
-        dAtrigger.Skip();
+    { 
+        //dAtrigger.AlterTrigger(true);
     } 
+
+
 
 }

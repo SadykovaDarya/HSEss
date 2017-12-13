@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{525281CC-8BEA-5AE0-8B12-984242BEBD1D}</ProjectGuid>
+    <ProjectGuid>{EA0C3076-69EF-896E-5FDF-B44D8AE234C1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -63,8 +63,6 @@
      <Compile Include="Assets\Scripts\Jumping.cs" />
      <Compile Include="Assets\Scripts\markBehavior.cs" />
      <Compile Include="Assets\Scripts\PlatformBehavior.cs" />
-     <Compile Include="Assets\Scripts\SlowModeAbility.cs" />
-     <Compile Include="Assets\Scripts\SlowModeTriggerable.cs" />
      <Compile Include="Assets\Scripts\StudentController.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
