@@ -224,11 +224,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4015d3bfb21153f41a180f360ac81c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilityButtonAxisName: SlowMode
+  abilityButtonAxisName: Fire1
   Mask: {fileID: 1398618451}
   CoolDownText: {fileID: 643752270}
-  ability: {fileID: 0}
-  fallingMarks: {fileID: 0}
+  ability: {fileID: 11400000, guid: 0dd0b76b6a80c8840bed4e5adaf2d16e, type: 2}
 --- !u!82 &212935455
 AudioSource:
   m_ObjectHideFlags: 0
@@ -284,7 +283,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -296,7 +295,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -308,7 +307,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
 --- !u!114 &212935456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,8 +525,6 @@ MonoBehaviour:
   Mask: {fileID: 1398618451}
   CoolDownText: {fileID: 643752270}
   ability: {fileID: 0}
-  fallingMarks: {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978,
-    type: 2}
 --- !u!1 &1173064085
 GameObject:
   m_ObjectHideFlags: 0

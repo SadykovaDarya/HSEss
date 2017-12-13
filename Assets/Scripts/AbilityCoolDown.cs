@@ -5,28 +5,29 @@ using UnityEngine.UI;
 
 public class AbilityCoolDown : MonoBehaviour {
 
-    public string abilityButtonAxisName = "AddTime";
+    public string abilityButtonAxisName = "Fire1";
     public Image Mask;
     public Text CoolDownText;
-    [SerializeField]private Ability ability;
-   [SerializeField] private GameObject fallingMarks;
+    [SerializeField] private Ability ability;
     private Image myButtonImage;
     private AudioSource abilitySource;
     private float coolDownDuration;
     private float nextReadyTime;
     private float coolDownTimeLeft;
+    private GameObject obj;
 
-    public void Start() {
+    public void Start()
+    {
         Initialize(ability);
     }
 
     public void Update()
     {
-       /* bool coolDownComplete = (Time.time > nextReadyTime);
+        bool coolDownComplete = (Time.time > nextReadyTime);
         if (coolDownComplete)
         {
             AbilityReady();
-            if (Input.GetButtonDown(abilityButtonAxisName))
+         if (Input.GetButtonDown(abilityButtonAxisName))
             {
                 ButtonTriggered();
             }
@@ -34,16 +35,16 @@ public class AbilityCoolDown : MonoBehaviour {
             {
                 CoolDown();
             }
-        }*/
+        }
     }
     public void Initialize(Ability selectedAbility)
     {
         ability = selectedAbility;
         myButtonImage = GetComponent<Image>();
         abilitySource = GetComponent<AudioSource>();
-       // myButtonImage.sprite = ability.aSprite;
+        myButtonImage.sprite = ability.aSprite;
         coolDownDuration = ability.aCoolDown;
-        ability.Initialize(fallingMarks);
+        ability.Initialize();
         AbilityReady();
 
     }
@@ -60,6 +61,7 @@ public class AbilityCoolDown : MonoBehaviour {
         float cd = Mathf.Round(coolDownTimeLeft);
         CoolDownText.text = cd.ToString();
         Mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+
     }
 
     private void ButtonTriggered()

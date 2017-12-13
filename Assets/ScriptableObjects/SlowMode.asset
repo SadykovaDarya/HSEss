@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2225983549c18d4fb501ee8ecfc3ef1, type: 3}
+  m_Name: SlowMode
+  m_EditorClassIdentifier: 
+  aName: SlowMode
+  aSprite: {fileID: 21300000, guid: 4e55e10ec21eba04f97d697f7acc53de, type: 3}
+  aSound: {fileID: 8300000, guid: 08e08ddb74175bc44a80d3a4387592b7, type: 3}
+  aCoolDown: 10
+  fallingMarks: {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978,
+    type: 2}
