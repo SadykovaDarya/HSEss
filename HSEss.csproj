@@ -222,6 +222,8 @@
     <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\AbilityCoolDown.cs" />
     <Compile Include="Assets\Scripts\BackgroundBehavior.cs" />
+    <Compile Include="Assets\Scripts\BackToMain.cs" />
+    <Compile Include="Assets\Scripts\BadMarkBehavior.cs" />
     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CharacterSelector.cs" />
@@ -232,8 +234,6 @@
     <Compile Include="Assets\Scripts\Jumping.cs" />
     <Compile Include="Assets\Scripts\markBehavior.cs" />
     <Compile Include="Assets\Scripts\PlatformBehavior.cs" />
-    <Compile Include="Assets\Scripts\SlowModeAbility.cs" />
-    <Compile Include="Assets\Scripts\SlowModeTriggerable.cs" />
     <Compile Include="Assets\Scripts\StudentController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
