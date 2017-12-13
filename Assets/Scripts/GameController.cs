@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour {
 
     void FixedUpdate() {
          timeleft -= Time.deltaTime;
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        character.GetComponent<Rigidbody2D>().gravityScale = 1;
     }
 
     public IEnumerator Spawn() {
