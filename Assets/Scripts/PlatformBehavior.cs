@@ -5,16 +5,16 @@ using UnityEngine;
 public class PlatformBehavior : MonoBehaviour {
 
 	public GameObject player;
-	public float diameter;
+	public float radius;
 
 	void Start () {
 		player = GameObject.FindWithTag("Player");
+        radius = player.GetComponent<CircleCollider2D>().radius;
 	}
 
 	void FixedUpdate () {
 		if (player.GetComponent<CircleCollider2D>().transform.position.y -
-			(diameter = 2 * player.GetComponent<CircleCollider2D>().radius) -
-			diameter / 2 >
+			 player.GetComponent<SpriteRenderer>().bounds.extents.y / 2 - radius >
 			GetComponent<Collider2D> ().transform.position.y) {
 			GetComponent<Collider2D> ().enabled = true;
 		} else
