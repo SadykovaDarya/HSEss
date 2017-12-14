@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class PlatformBehavior : MonoBehaviour {
 
-	public GameObject player;
-	public float radius;
+    public GameObject playersbase;
 
 	void Start () {
-		player = GameObject.FindWithTag("Player");
-        radius = player.GetComponent<CapsuleCollider2D>().size.y / 2;
+		playersbase = GameObject.FindWithTag("Base");
 	}
 
 	void FixedUpdate () {
-		if (player.GetComponent<CapsuleCollider2D>().transform.position.y -
-			 radius >
-			GetComponent<Collider2D> ().transform.position.y) {
+		if (playersbase.transform.position.y >
+			transform.position.y + GetComponent<SpriteRenderer>().bounds.extents.y / 2) {
 			GetComponent<Collider2D> ().enabled = true;
 		} else
 			GetComponent<Collider2D> ().enabled = false;

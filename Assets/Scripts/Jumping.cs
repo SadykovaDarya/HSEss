@@ -5,13 +5,13 @@ using UnityEngine;
 public class Jumping : MonoBehaviour {
 
 	Transform target;
-	public float force = 500f;
+	public float force;
 	public Collider2D platform;
 	public bool isTouching;
 
 	void FixedUpdate () {
-		if (platform != null) {	
-			if (isTouching = GetComponent<Collider2D> ().IsTouching (platform) &&
+		if (platform != null) {
+			if (isTouching = GetComponent<CapsuleCollider2D> ().IsTouching (platform) &&
 			    GetComponent<Rigidbody2D> ().velocity.y <= 0f) {
 				GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, force));
 			} else

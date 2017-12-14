@@ -7,6 +7,7 @@ TagManager:
   - marks
   - Platform
   - BadMark
+  - Base
   layers:
   - Default
   - TransparentFX

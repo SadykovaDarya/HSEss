@@ -3,24 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour {
-	
+
+    public float offset;
 	public GameObject player;
     public Transform target;
-    public float prevtarget;
+    float prevtarget;
 
-	// Use this for initialization
-	void Start () {
+    
+    void Awake() {
 		target = player.transform;
-        prevtarget = target.position.y;
+        prevtarget = target.position.y - offset / 100;
+        transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (prevtarget <= target.position.y)
-        {
-            transform.position = new Vector3(transform.position.x, target.position.y, transform.position.z);
-            prevtarget = target.position.y;
+	void Update () {
+        if (prevtarget <= target.position.y - offset / 100) {
+            transform.position = new Vector3(transform.position.x, target.position.y - offset / 100, transform.position.z);
+            prevtarget = target.position.y - offset / 100;
         }
 	}
 }
