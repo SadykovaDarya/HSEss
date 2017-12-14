@@ -14,7 +14,7 @@ public class BackToMain : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 }
