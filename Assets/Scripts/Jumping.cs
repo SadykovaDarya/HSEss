@@ -22,5 +22,6 @@ public class Jumping : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D collision) {
 		if (collision.gameObject.tag == "Platform")
 			platform = collision.collider;
+
 	}
 }
