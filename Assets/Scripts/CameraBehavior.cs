@@ -27,15 +27,11 @@ public class CameraBehavior : MonoBehaviour {
         }
 	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
+    void OnCollisionEnter2D(Collision2D collision) {
+         
             gameOverText.SetActive(true);
             restartButton.SetActive(true);
             backButton.SetActive(true);
-        }
-            
-
+        
     }
 }

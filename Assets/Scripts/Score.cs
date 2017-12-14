@@ -11,6 +11,10 @@ public class Score : MonoBehaviour {
 
     private void Start()
     {
+        foreach (var obj in FindObjectsOfType<Text>()) {
+            if (obj.tag == "ScoreText")
+                ScoreText = obj;
+        }
         score = 0;
         UpdateScore();
     }
