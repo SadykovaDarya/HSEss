@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour {
 
     void UpdateText()
     {
-        timerText.text = "Time left: " + Mathf.RoundToInt(timeleft).ToString();
+        timerText.text = "Time   left: " + Mathf.RoundToInt(timeleft).ToString();
     }
 
     public IEnumerator Spawn() {

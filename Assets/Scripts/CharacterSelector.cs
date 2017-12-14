@@ -11,11 +11,12 @@ public class CharacterSelector : MonoBehaviour
     public Character[] characters;
     public GameObject characterSelectPanel;
     public GameObject gameSelectPanel;
-
+    
 
 
     public void StartGame(int characterChoise)
     {
+       
         characterSelectPanel.SetActive(false);
         gameSelectPanel.SetActive(true);
 
