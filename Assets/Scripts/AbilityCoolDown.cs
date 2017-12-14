@@ -8,17 +8,33 @@ public class AbilityCoolDown : MonoBehaviour {
     public string abilityButtonAxisName = "Fire1";
     public Image Mask;
     public Text CoolDownText;
-    [SerializeField] private Ability ability;
     private Image myButtonImage;
     private AudioSource abilitySource;
-    private float coolDownDuration;
+    private float coolDownDuration=10;
     private float nextReadyTime;
     private float coolDownTimeLeft;
-    private GameObject obj;
+    private bool coolDownCompleted;
 
+    public bool CoolDownCompleted
+    {
+        get { return coolDownCompleted; }
+        set { coolDownCompleted = value; }
+    }
+    private Ability ability;
+
+    public Ability Ability
+    {
+        get { return ability; }
+        set { ability = value; }
+    }
     public void Start()
     {
-        Initialize(ability);
+        
+    }
+    public void FixedUpdate()
+    {
+        coolDownCompleted = (Time.time > nextReadyTime);
+        CoolDown();
     }
 
     public void Update()
@@ -40,12 +56,12 @@ public class AbilityCoolDown : MonoBehaviour {
     public void Initialize(Ability selectedAbility)
     {
         ability = selectedAbility;
-        myButtonImage = GetComponent<Image>();
-        abilitySource = GetComponent<AudioSource>();
-        myButtonImage.sprite = ability.aSprite;
-        coolDownDuration = ability.aCoolDown;
+        //myButtonImage = GetComponent<Image>();
+        //abilitySource = GetComponent<AudioSource>();
+        //myButtonImage.sprite = ability.aSprite;
+        //coolDownDuration = ability.aCoolDown;
         ability.Initialize();
-        AbilityReady();
+        //AbilityReady();
 
     }
 
@@ -58,20 +74,17 @@ public class AbilityCoolDown : MonoBehaviour {
     private void CoolDown()
     {
         coolDownTimeLeft -= Time.deltaTime;
-        float cd = Mathf.Round(coolDownTimeLeft);
-        CoolDownText.text = cd.ToString();
-        Mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+        //float cd = Mathf.Round(coolDownTimeLeft);
+        //CoolDownText.text = cd.ToString();
+        //Mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
 
     }
 
-    private void ButtonTriggered()
+
+  public void ButtonTriggered()
     {
         nextReadyTime = coolDownDuration + Time.time;
         coolDownTimeLeft = coolDownDuration;
-        Mask.enabled = true;
-        abilitySource.clip = ability.aSound;
-        abilitySource.Play();
-        ability.TriggerAbility();
 
 
     }

@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 82365160056333360}
   - component: {fileID: 114196445599604330}
   - component: {fileID: 114761573380388628}
+  - component: {fileID: 114007738283165730}
   m_Layer: 0
   m_Name: character
   m_TagString: Player
@@ -177,6 +178,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114007738283165730
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1968854607922708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4015d3bfb21153f41a180f360ac81c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityButtonAxisName: Fire1
+  Mask: {fileID: 0}
+  CoolDownText: {fileID: 0}
 --- !u!114 &114196445599604330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108670807
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8deb7e1e53b2c8541b3ee25e61964eda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b9305cbb152ce944b947537607c1603, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

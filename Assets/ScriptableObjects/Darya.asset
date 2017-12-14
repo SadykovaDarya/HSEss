@@ -13,4 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Darya
   cSprite: {fileID: 21300000, guid: 601e4a2f13d549349a5e7ffb050385a7, type: 3}
-  characterAbilities: []
+  characterAbilities:
+  - {fileID: 11400000, guid: 405c539062ef8684fb79b61d6f6a5d96, type: 2}
