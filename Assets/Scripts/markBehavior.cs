@@ -16,7 +16,7 @@ public class markBehavior : MonoBehaviour {
     void FixedUpdate () {
         if(Check)
         {
-            transform.Translate(new Vector3(0f, -1f));
+            transform.Translate(new Vector3(0f, -0.001f));
 
         }
         else 
@@ -36,14 +36,13 @@ public class markBehavior : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            StartCoroutine("Slow");
-        }
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
+        if (cool.CoolDownCompleted && cool.Ability.name == "SlowMode") { StartCoroutine("Slow"); }
     }
     IEnumerator Slow()
     {
-        var coolDownTimeLeft = 10f;
+        var coolDownTimeLeft = 5f;
         while ( (coolDownTimeLeft-= Time.deltaTime)>0) {
             Check = true;
             FixedUpdate();

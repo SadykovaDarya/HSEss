@@ -23,14 +23,10 @@ public class CharacterSelector : MonoBehaviour
         player.GetComponent<SpriteRenderer>().sprite = characters[characterChoise].cSprite;
         GameObject spawnedPlayer = Instantiate(player, playerSpawnPosition, Quaternion.identity) as GameObject;
 
-        AbilityCoolDown[] coolDownButtons = GetComponentsInChildren<AbilityCoolDown>();
+       
         Character selectedCharacter = characters[characterChoise];
-
-        for (int i = 0; i < coolDownButtons.Length; i++)
-        {
-            coolDownButtons[i].Initialize(selectedCharacter.characterAbilities[i]);
-
-        }
+        AbilityCoolDown coolDown = spawnedPlayer.GetComponent<AbilityCoolDown>();
+        coolDown.Initialize(selectedCharacter.characterAbilities[0]);
 
 
     }

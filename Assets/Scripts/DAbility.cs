@@ -14,11 +14,6 @@ public class DAbility : Ability {
 
 
     }
-    public override void TriggerAbility()
-    { 
-        //dAtrigger.AlterTrigger(true);
-    } 
-
 
 
 }
