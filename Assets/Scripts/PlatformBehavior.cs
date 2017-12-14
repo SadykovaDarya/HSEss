@@ -9,12 +9,12 @@ public class PlatformBehavior : MonoBehaviour {
 
 	void Start () {
 		player = GameObject.FindWithTag("Player");
-        radius = player.GetComponent<CircleCollider2D>().radius;
+        radius = player.GetComponent<CapsuleCollider2D>().size.y / 2;
 	}
 
 	void FixedUpdate () {
-		if (player.GetComponent<CircleCollider2D>().transform.position.y -
-			 player.GetComponent<SpriteRenderer>().bounds.extents.y / 2 - radius >
+		if (player.GetComponent<CapsuleCollider2D>().transform.position.y -
+			 radius >
 			GetComponent<Collider2D> ().transform.position.y) {
 			GetComponent<Collider2D> ().enabled = true;
 		} else

@@ -219,6 +219,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Moving.cs" />
     <Compile Include="Assets\Scripts\Ability.cs" />
     <Compile Include="Assets\Scripts\AbilityCoolDown.cs" />
     <Compile Include="Assets\Scripts\BackgroundBehavior.cs" />

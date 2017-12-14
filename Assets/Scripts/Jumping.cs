@@ -5,11 +5,9 @@ using UnityEngine;
 public class Jumping : MonoBehaviour {
 
 	Transform target;
-
 	public float force = 500f;
 	public Collider2D platform;
 	public bool isTouching;
-
 
 	void FixedUpdate () {
 		if (platform != null) {	
@@ -19,7 +17,6 @@ public class Jumping : MonoBehaviour {
 			} else
 				platform = null;
 		}
-       
     }
 
 	void OnCollisionEnter2D(Collision2D collision) {
