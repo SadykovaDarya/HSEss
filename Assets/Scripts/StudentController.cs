@@ -6,7 +6,8 @@ public class StudentController : MonoBehaviour {
     float objectSpeed = 0f;
 
     void UpdateSpeed() {
-        objectSpeed = GetComponent<Rigidbody2D>().velocity.x;
+        
+            objectSpeed = GetComponent<Rigidbody2D>().velocity.x;
     }
 
 
@@ -23,15 +24,30 @@ public class StudentController : MonoBehaviour {
     
 
     void Update() {
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
         if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
             if (objectSpeed > 0)
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+           
+            if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector3(-400f, 0f));
+                UpdateSpeed();
+            }
+            else
             PushLeft();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
             if(objectSpeed < 0)
                 GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            PushRight();
+            if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector3(400f, 0f));
+                UpdateSpeed();
+            }
+            else
+                PushRight();
         }
     }
 

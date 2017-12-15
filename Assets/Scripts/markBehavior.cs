@@ -16,7 +16,7 @@ public class markBehavior : MonoBehaviour {
     void FixedUpdate () {
         if(Check)
         {
-            transform.Translate(new Vector3(0f, -0.001f));
+            transform.Translate(new Vector3(0f, -0.0001f));
 
         }
         else 

@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - BadMark
   - Base
+  - ScoreText
   layers:
   - Default
   - TransparentFX
