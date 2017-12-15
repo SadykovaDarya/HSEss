@@ -34,6 +34,12 @@ public class GameController : MonoBehaviour {
         UpdateText();
         GameObject character = GameObject.FindGameObjectWithTag("Player");
         character.GetComponent<Rigidbody2D>().gravityScale = 1;
+        Score score = character.GetComponent<Score>();
+        foreach (var obj in FindObjectsOfType<Text>())
+        {
+            if (obj.tag == "ScoreText")
+               score.Text = obj;
+        }
     }
 
     void UpdateText()
