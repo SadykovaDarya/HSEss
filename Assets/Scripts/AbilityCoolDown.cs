@@ -56,8 +56,10 @@ public class AbilityCoolDown : MonoBehaviour {
     public void Initialize(Ability selectedAbility)
     {
         ability = selectedAbility;
+        var sounds = GetComponents<AudioSource>();
+
         //myButtonImage = GetComponent<Image>();
-        //abilitySource = GetComponent<AudioSource>();
+        abilitySource = sounds[0];
         //myButtonImage.sprite = ability.aSprite;
         //coolDownDuration = ability.aCoolDown;
         ability.Initialize();
@@ -83,6 +85,7 @@ public class AbilityCoolDown : MonoBehaviour {
 
   public void ButtonTriggered()
     {
+        abilitySource.PlayOneShot(ability.aSound, .5f);
         nextReadyTime = coolDownDuration + Time.time;
         coolDownTimeLeft = coolDownDuration;
 

@@ -9,6 +9,7 @@ TagManager:
   - BadMark
   - Base
   - ScoreText
+  - CoolDownIcon
   layers:
   - Default
   - TransparentFX

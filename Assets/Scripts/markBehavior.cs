@@ -8,6 +8,7 @@ public class markBehavior : MonoBehaviour {
 
     public AudioClip Destroy_sound;
     private AudioSource soundSource;
+   private  AbilityCoolDown cool;
     public bool Check { get; private set; }
 
 
@@ -37,7 +38,7 @@ public class markBehavior : MonoBehaviour {
     void Update()
     {
         GameObject character = GameObject.FindGameObjectWithTag("Player");
-        AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
+        cool = character.GetComponent<AbilityCoolDown>();
         if (cool.CoolDownCompleted && cool.Ability.name == "SlowMode") { StartCoroutine("Slow"); }
     }
     IEnumerator Slow()
@@ -48,6 +49,7 @@ public class markBehavior : MonoBehaviour {
             FixedUpdate();
             yield return null;
         }
+        cool.ButtonTriggered();
     }
 
 

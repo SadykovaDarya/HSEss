@@ -27,9 +27,9 @@ public class BadMarkBehavior : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+            if (collision.gameObject.tag == "Player")
         {
-            soundSource = collision.GetComponent<AudioSource>();
+                soundSource = collision.GetComponent<AudioSource>();
             soundSource.PlayOneShot(Destroy_sound, .5f);
         }
 
