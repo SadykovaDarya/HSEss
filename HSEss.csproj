@@ -235,8 +235,12 @@
     <Compile Include="Assets\Scripts\markBehavior.cs" />
     <Compile Include="Assets\Scripts\Moving.cs" />
     <Compile Include="Assets\Scripts\PlatformBehavior.cs" />
+    <Compile Include="Assets\Scripts\PortalBehavior.cs" />
+    <Compile Include="Assets\Scripts\SAbility.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
+    <Compile Include="Assets\Scripts\SpawnPlatforms.cs" />
     <Compile Include="Assets\Scripts\StudentController.cs" />
+    <Compile Include="Assets\Scripts\VAbility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

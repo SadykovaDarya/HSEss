@@ -16,8 +16,11 @@ public class BackgroundBehavior : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if(firstIsLower) {
+	void Update ()
+    {
+        if (player == null)
+            player = GameObject.FindWithTag("Player");
+        if (firstIsLower) {
             if(player.transform.position.y >= bg2.transform.position.y){
                 bg1.transform.position = new Vector3(bg1.transform.position.x,
                                         bg1.transform.position.y + bg1.GetComponent<SpriteRenderer>().bounds.extents.y);

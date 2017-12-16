@@ -928,7 +928,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4091280251445572, guid: 4adfbb8d9daaa9248ac9d4c55cfce2c0, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4adfbb8d9daaa9248ac9d4c55cfce2c0, type: 2}
@@ -946,6 +946,8 @@ GameObject:
   - component: {fileID: 1338801367}
   - component: {fileID: 1338801371}
   - component: {fileID: 1338801373}
+  - component: {fileID: 1338801374}
+  - component: {fileID: 1338801372}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1014,7 +1016,7 @@ Transform:
   m_Children:
   - {fileID: 866123471}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1338801371
 MonoBehaviour:
@@ -1028,11 +1030,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 20
-  player: {fileID: 2092298764}
   target: {fileID: 0}
   gameOverText: {fileID: 82080628}
   restartButton: {fileID: 954696458}
   backButton: {fileID: 39133167}
+--- !u!68 &1338801372
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1338801366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 3.2, y: 3}
+  - {x: 3.2, y: -3}
 --- !u!68 &1338801373
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1048,10 +1066,27 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 3.18, y: 2.72}
-  - {x: 3.18, y: -6}
-  - {x: -3.18, y: -6}
-  - {x: -3.18, y: 2.72}
+  - {x: 3.9862566, y: -2.8490002}
+  - {x: 3.1290264, y: -3.4259038}
+  - {x: -2.797708, y: -3.4259043}
+  - {x: -4.035672, y: -2.517911}
+--- !u!68 &1338801374
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1338801366}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -3.2, y: 3}
+  - {x: -3.2, y: -3}
 --- !u!1 &1682064875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1223,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1977448704
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1977448706}
+  - component: {fileID: 1977448705}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1977448705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977448704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186ff5c8a417b5549b29a06a63064632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 1704365970006442, guid: 4adfbb8d9daaa9248ac9d4c55cfce2c0, type: 2}
+  position: {x: 0, y: 0, z: 0}
+--- !u!4 &1977448706
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977448704}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.2795386, y: -0.27679002, z: -3.2714844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2092298764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1278,7 @@ GameObject:
   - component: {fileID: 2092298769}
   - component: {fileID: 2092298770}
   - component: {fileID: 2092298771}
+  - component: {fileID: 2092298766}
   m_Layer: 8
   m_Name: char
   m_TagString: Player
@@ -1222,6 +1300,21 @@ MonoBehaviour:
   force: 250
   platform: {fileID: 0}
   isTouching: 0
+--- !u!114 &2092298766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2092298764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3c2a65b4e80f14cb3e9e995ee1ec9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activePlayers: 0
+  backGroundWidth: 0
+  playerspos: 0
+  targetspos: 0
 --- !u!212 &2092298767
 SpriteRenderer:
   m_ObjectHideFlags: 0
