@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StudentController : MonoBehaviour {
@@ -35,9 +36,10 @@ public class StudentController : MonoBehaviour {
                 if (objectSpeed > 0)
                     GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
-                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode" && cool.CoolDownCompleted)
                 {
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(-400f, 0f));
+
                     UpdateSpeed();
                 }
                 else
@@ -47,9 +49,10 @@ public class StudentController : MonoBehaviour {
             {
                 if (objectSpeed < 0)
                     GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode" && cool.CoolDownCompleted)
                 {
                     GetComponent<Rigidbody2D>().AddForce(new Vector3(400f, 0f));
+
                     UpdateSpeed();
                 }
                 else

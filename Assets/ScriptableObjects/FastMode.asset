@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Name: FastMode
   m_EditorClassIdentifier: 
   aName: FastMode
-  aSprite: {fileID: 21300000, guid: 8fe71a680932ec9448e91d127670e31d, type: 3}
-  aMaskSprite: {fileID: 21300000, guid: 8fe71a680932ec9448e91d127670e31d, type: 3}
+  aSprite: {fileID: 21300000, guid: 8a11110360e0efe41bee12d6c4e727ef, type: 3}
+  aMaskSprite: {fileID: 21300000, guid: 8a11110360e0efe41bee12d6c4e727ef, type: 3}
   aSound: {fileID: 0}
   aCoolDown: 1
-  aImage: {fileID: 0}

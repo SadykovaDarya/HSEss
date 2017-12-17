@@ -10,7 +10,6 @@ public abstract class Ability : ScriptableObject {
     public Sprite aMaskSprite;
     public AudioClip aSound;
     public float aCoolDown = 1f;
-    public Image aImage;
 
 
     public abstract void Initialize();

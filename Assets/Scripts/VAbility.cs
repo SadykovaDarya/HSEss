@@ -10,8 +10,6 @@ public class VAbility : Ability
     public override void Initialize()
     {
         aName = "FastMode";
-
-
     }
 }
 

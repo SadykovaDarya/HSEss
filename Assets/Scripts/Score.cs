@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour {
 
     private Text ScoreText;
+    public int ballValue;
+    private int score;
+    private AbilityCoolDown coolDown;
+
 
     public Text Text
     {
@@ -13,16 +17,9 @@ public class Score : MonoBehaviour {
         set { ScoreText = value; }
     }
 
-    public int ballValue;
-    private int score;
-    private AbilityCoolDown coolDown;
-
+  
     private void Start()
     {
-        if (ScoreText = null)
-            foreach (var text in FindObjectsOfType<Text>())
-                if (text.tag == "ScoreText")
-                    ScoreText = text;
         score = 0;
         UpdateScore();
     }

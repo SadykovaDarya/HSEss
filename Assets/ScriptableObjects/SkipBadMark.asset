@@ -12,9 +12,7 @@ MonoBehaviour:
   m_Name: SkipBadMark
   m_EditorClassIdentifier: 
   aName: Skip
-  aSprite: {fileID: 21300000, guid: d28ee03b33ee8484c9c1ba4d1071bcad, type: 3}
-  aMaskSprite: {fileID: 21300000, guid: d28ee03b33ee8484c9c1ba4d1071bcad, type: 3}
+  aSprite: {fileID: 21300000, guid: 90072d95e45c82f4bafcc26326831ea4, type: 3}
+  aMaskSprite: {fileID: 21300000, guid: 90072d95e45c82f4bafcc26326831ea4, type: 3}
   aSound: {fileID: 8300000, guid: 20d3e949345a24c42a385972bb5c171f, type: 3}
   aCoolDown: 1
-  aImage: {fileID: 0}
-  player: {fileID: 0}

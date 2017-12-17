@@ -7,6 +7,7 @@ public class BadMarkBehavior : MonoBehaviour {
 
     public AudioClip Destroy_sound;
     private AudioSource soundSource;
+    private AbilityCoolDown cool;
 
     public bool Check { get; private set; }
 
@@ -31,6 +32,7 @@ public class BadMarkBehavior : MonoBehaviour {
         {
                 soundSource = collision.GetComponent<AudioSource>();
             soundSource.PlayOneShot(Destroy_sound, .5f);
+            cool.ButtonTriggered();
         }
 
         Destroy(gameObject);
@@ -40,7 +42,7 @@ public class BadMarkBehavior : MonoBehaviour {
     void Update()
     {
         GameObject character = GameObject.FindGameObjectWithTag("Player");
-        AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
+         cool = character.GetComponent<AbilityCoolDown>();
         if (cool.CoolDownCompleted && cool.Ability.name == "SlowMode") { StartCoroutine("Slow"); }
     }
     IEnumerator Slow()
@@ -52,6 +54,7 @@ public class BadMarkBehavior : MonoBehaviour {
             FixedUpdate();
             yield return null;
         }
+     
     }
 
 }

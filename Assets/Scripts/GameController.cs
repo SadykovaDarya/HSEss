@@ -23,6 +23,25 @@ public class GameController : MonoBehaviour {
         maxWidth = targetWidth.x - ballWidth;
         StartCoroutine(Spawn());
         UpdateText();
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        Score score = character.GetComponent<Score>();
+        AbilityCoolDown coolDown = character.GetComponent<AbilityCoolDown>();
+        foreach (var obj in FindObjectsOfType<Text>())
+        {
+            if (obj.tag == "ScoreText")
+                score.Text = obj;
+        }
+        foreach (var obj in FindObjectsOfType<Image>())
+        {
+            if (obj.tag == "CoolDownIcon")
+                coolDown.MyButtonImage = obj;
+            if (obj.tag == "CoolDownMask")
+            {
+                coolDown.Mask = obj;
+
+            }
+
+        }
     }
 
     void FixedUpdate() {
@@ -34,24 +53,6 @@ public class GameController : MonoBehaviour {
         UpdateText();
         GameObject character = GameObject.FindGameObjectWithTag("Player");
         character.GetComponent<Rigidbody2D>().gravityScale = 1;
-        Score score = character.GetComponent<Score>();
-        AbilityCoolDown coolDown = character.GetComponent<AbilityCoolDown>();
-        foreach (var obj in FindObjectsOfType<Text>())
-        {
-            if (obj.tag == "ScoreText") 
-            score.Text = obj;
-        }
-        foreach (var obj in FindObjectsOfType<Image>())
-        {
-            if (obj.tag == "CoolDownIcon")
-                coolDown.MyButtonImage = obj;
-            if (obj.tag == "CoolDownMask")
-            {
-                coolDown.Mask = obj;
-              
-            }
-
-        }
 
 
     }
