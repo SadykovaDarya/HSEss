@@ -40,5 +40,13 @@ public class CharacterSelector : MonoBehaviour
     {
         SceneManager.LoadScene("DoodleJump");
     }
+
+    public void ChangeSelection()
+    {
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        Destroy(character);
+        characterSelectPanel.SetActive(true);
+        gameSelectPanel.SetActive(false);
+    }
 }
 
