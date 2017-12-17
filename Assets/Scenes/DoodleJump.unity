@@ -476,34 +476,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 029096d0ad612024c9d7f049fde4fa42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &573941714
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 573941715}
-  m_Layer: 8
-  m_Name: playersbase
-  m_TagString: Base
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &573941715
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 573941714}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.42901, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713303867
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64a6150d99a03a4db17eb584c4c18d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreText: {fileID: 827952430}
 --- !u!1 &1682064875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,6 +1328,7 @@ GameObject:
   - component: {fileID: 1977448706}
   - component: {fileID: 1977448705}
   - component: {fileID: 1977448707}
+  - component: {fileID: 1977448708}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1405,3 +1377,14 @@ MonoBehaviour:
   - {fileID: 1655310871834290, guid: 9d9c8fd95a8684ed98aea5b48195927f, type: 2}
   - {fileID: 1385048747474810, guid: d5808c58f89ed4af6999e25a70a1bda8, type: 2}
   spawningTime: 0
+--- !u!114 &1977448708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1977448704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 056df3049f5dc4eac993dfc6f2140444, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
