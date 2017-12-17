@@ -48,7 +48,7 @@ public class GameController : MonoBehaviour {
             if (obj.tag == "CoolDownMask")
             {
                 coolDown.Mask = obj;
-               // obj.fillAmount = coolDown.Mask.fillAmount;
+              
             }
 
         }
