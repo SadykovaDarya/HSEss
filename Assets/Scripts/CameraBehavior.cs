@@ -12,7 +12,17 @@ public class CameraBehavior : MonoBehaviour {
     public GameObject backButton;
     float prevtarget;
 
-    
+    private void Start()
+    {
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        GameObject charactersbase = GameObject.FindGameObjectWithTag("Base");
+        character.transform.position = new Vector3(0, -0.1f, 0);
+        charactersbase.transform.parent = character.transform;
+        character.gameObject.transform.localScale = new Vector3(0.3f, 0.3f, 0);
+        character.GetComponent<Rigidbody2D>().gravityScale = 1;
+
+    }
+
     void Awake() {
 		target = GameObject.FindWithTag("Player").transform;
         prevtarget = target.position.y - offset / 100;

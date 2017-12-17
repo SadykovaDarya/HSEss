@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StudentController : MonoBehaviour {
     
@@ -21,33 +22,39 @@ public class StudentController : MonoBehaviour {
         UpdateSpeed();
     }
 
-    
 
-    void Update() {
-        GameObject character = GameObject.FindGameObjectWithTag("Player");
-        AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
-            if (objectSpeed > 0)
-                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-           
-            if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "Main")
+        {
+            GameObject character = GameObject.FindGameObjectWithTag("Player");
+            AbilityCoolDown cool = character.GetComponent<AbilityCoolDown>();
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector3(-400f, 0f));
-                UpdateSpeed();
+                if (objectSpeed > 0)
+                    GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+
+                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+                {
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(-400f, 0f));
+                    UpdateSpeed();
+                }
+                else
+                    PushLeft();
             }
-            else
-            PushLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
-            if(objectSpeed < 0)
-                GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+            else if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector3(400f, 0f));
-                UpdateSpeed();
+                if (objectSpeed < 0)
+                    GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+                if (cool.CoolDownCompleted && cool.Ability.name == "FastMode")
+                {
+                    GetComponent<Rigidbody2D>().AddForce(new Vector3(400f, 0f));
+                    UpdateSpeed();
+                }
+                else
+                    PushRight();
             }
-            else
-                PushRight();
         }
     }
 

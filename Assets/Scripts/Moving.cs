@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour {
 
-    public float speed = 3;
+    public float speed = 4;
     Camera cam;
     // Use this for initialization
     void Start () {

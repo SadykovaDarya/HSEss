@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PortalBehavior : MonoBehaviour {
 
@@ -15,13 +16,17 @@ public class PortalBehavior : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
-        activePlayers = GameObject.FindGameObjectsWithTag("Player").Length;
-        if (activePlayers == 1) {
-            if (gameObject.transform.position.x > Camera.main.transform.position.x)
-                clone = Instantiate(gameObject, new Vector3(transform.position.x - backGroundWidth, transform.position.y), new Quaternion());
-            else
-                clone = Instantiate(gameObject, new Vector3(transform.position.x + backGroundWidth, transform.position.y), new Quaternion());
-            activePlayers++;
+        if (SceneManager.GetActiveScene().name == "DoodleJump")
+        {
+            activePlayers = GameObject.FindGameObjectsWithTag("Player").Length;
+            if (activePlayers == 1)
+            {
+                if (gameObject.transform.position.x > Camera.main.transform.position.x)
+                    clone = Instantiate(gameObject, new Vector3(transform.position.x - backGroundWidth, transform.position.y), new Quaternion());
+                else
+                    clone = Instantiate(gameObject, new Vector3(transform.position.x + backGroundWidth, transform.position.y), new Quaternion());
+                activePlayers++;
+            }
         }
     }
 
@@ -33,11 +38,16 @@ public class PortalBehavior : MonoBehaviour {
     }
 
     void OnTriggerExit2D(Collider2D collision) {
-        if (activePlayers == 2) {
-            if (transform.position.x < Camera.main.transform.position.x - backGroundWidth / 2 || 
-                transform.position.x > Camera.main.transform.position.x + backGroundWidth / 2) {
-                Destroy(gameObject);
-                activePlayers--;
+        if (SceneManager.GetActiveScene().name == "DoodleJump")
+        {
+            if (activePlayers == 2)
+            {
+                if (transform.position.x < Camera.main.transform.position.x - backGroundWidth / 2 ||
+                    transform.position.x > Camera.main.transform.position.x + backGroundWidth / 2)
+                {
+                    Destroy(gameObject);
+                    activePlayers--;
+                }
             }
         }
     }
