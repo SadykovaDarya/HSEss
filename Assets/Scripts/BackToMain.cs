@@ -14,6 +14,8 @@ public class BackToMain : MonoBehaviour {
 
     public void Restart()
     {
+        GameObject character = GameObject.FindGameObjectWithTag("Player");
+        character.transform.position = new Vector3(0, -0.1f, 0);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
