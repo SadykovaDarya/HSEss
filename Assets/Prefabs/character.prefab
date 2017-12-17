@@ -22,8 +22,6 @@ GameObject:
   - component: {fileID: 212006882497922848}
   - component: {fileID: 50240187472121216}
   - component: {fileID: 114226810653808782}
-  - component: {fileID: 58918833649291216}
-  - component: {fileID: 58047105850704638}
   - component: {fileID: 82365160056333360}
   - component: {fileID: 114196445599604330}
   - component: {fileID: 114761573380388628}
@@ -72,36 +70,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!58 &58047105850704638
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968854607922708}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0204826, y: 0.4197997}
-  serializedVersion: 2
-  m_Radius: 0.6
---- !u!58 &58918833649291216
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1968854607922708}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.9088714}
-  serializedVersion: 2
-  m_Radius: 0.1931532
 --- !u!61 &61643322696338412
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -330,7 +298,7 @@ SpriteRenderer:
   m_SortingLayerID: -1108670807
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9b9305cbb152ce944b947537607c1603, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 601e4a2f13d549349a5e7ffb050385a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
