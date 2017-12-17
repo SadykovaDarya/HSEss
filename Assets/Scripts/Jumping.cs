@@ -11,7 +11,7 @@ public class Jumping : MonoBehaviour {
 
 	void FixedUpdate () {
 		if (platform != null) {
-			if (isTouching = GetComponent<CapsuleCollider2D> ().IsTouching (platform) &&
+			if (isTouching = GetComponent<Collider2D> ().IsTouching (platform) &&
 			    GetComponent<Rigidbody2D> ().velocity.y <= 0.1f) {
 				GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0f, force));
 			} else

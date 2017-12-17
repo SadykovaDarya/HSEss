@@ -19,7 +19,9 @@ public class BackgroundBehavior : MonoBehaviour {
 	void Update ()
     {
         if (player == null)
+			try{
             player = GameObject.FindWithTag("Player");
+		} catch {}
         if (firstIsLower) {
             if(player.transform.position.y >= bg2.transform.position.y){
                 bg1.transform.position = new Vector3(bg1.transform.position.x,
@@ -28,10 +30,9 @@ public class BackgroundBehavior : MonoBehaviour {
             }
         }
         else {
-            if (player.transform.position.y >= bg1.transform.position.y)
-            {
+            if (player.transform.position.y >= bg1.transform.position.y) {
                 bg2.transform.position = new Vector3(bg2.transform.position.x,
-                                        bg2.transform.position.y + bg2.GetComponent<SpriteRenderer>().bounds.extents.y);
+                	bg2.transform.position.y + bg2.GetComponent<SpriteRenderer>().bounds.extents.y);
                 firstIsLower = true;
             }
         }

@@ -10,6 +10,7 @@ TagManager:
   - Base
   - ScoreText
   - CoolDownIcon
+  - suboch
   layers:
   - Default
   - TransparentFX

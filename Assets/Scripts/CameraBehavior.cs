@@ -21,8 +21,12 @@ public class CameraBehavior : MonoBehaviour {
 	
 	void Update ()
     {
-        if (target == null) {
-            target = GameObject.FindWithTag("Player").transform;
+		if (target == null) {	
+			try { 
+            	target = GameObject.FindWithTag("Player").transform;
+			}catch {
+				GameOver ();
+			}
         }
         if (prevtarget <= target.position.y - offset / 100) {
             transform.position = new Vector3(transform.position.x, target.position.y - offset / 100, transform.position.z);
@@ -32,9 +36,13 @@ public class CameraBehavior : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if(collision.gameObject.tag == "Player"){
-            gameOverText.SetActive(true);
-            restartButton.SetActive(true);
-            backButton.SetActive(true);
+			GameOver ();
         }
     }
+
+	void GameOver(){
+		gameOverText.SetActive (true);
+		restartButton.SetActive (true);
+		backButton.SetActive (true);
+	}
 }
