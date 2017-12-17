@@ -11,8 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c2c057ed08aff40943df63553b3f95, type: 3}
   m_Name: SkipBadMark
   m_EditorClassIdentifier: 
-  aName: SkipBadMark
-  aSprite: {fileID: 0}
+  aName: Skip
+  aSprite: {fileID: 21300000, guid: 25e14eec37c28394eb028fe8bddc56fe, type: 3}
+  aMaskSprite: {fileID: 21300000, guid: 25e14eec37c28394eb028fe8bddc56fe, type: 3}
   aSound: {fileID: 0}
   aCoolDown: 1
+  aImage: {fileID: 0}
   player: {fileID: 0}

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Name: SlowMode
   m_EditorClassIdentifier: 
   aName: SlowMode
-  aSprite: {fileID: 21300000, guid: 4e55e10ec21eba04f97d697f7acc53de, type: 3}
+  aSprite: {fileID: 21300000, guid: a62496e6a1c33b14480dfcb1d8601b0f, type: 3}
+  aMaskSprite: {fileID: 21300000, guid: a62496e6a1c33b14480dfcb1d8601b0f, type: 3}
   aSound: {fileID: 8300000, guid: 08e08ddb74175bc44a80d3a4387592b7, type: 3}
   aCoolDown: 10
+  aImage: {fileID: 0}
   fallingMarks: {fileID: 1052669752825352, guid: b30509da48251bb47b5feeb73f639978,
     type: 2}

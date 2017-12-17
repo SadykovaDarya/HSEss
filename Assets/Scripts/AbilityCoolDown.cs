@@ -6,13 +6,28 @@ using UnityEngine.UI;
 public class AbilityCoolDown : MonoBehaviour {
 
     public string abilityButtonAxisName = "Fire1";
-    public Image Mask;
-    public Text CoolDownText;
     private Image myButtonImage;
+
+    public Image MyButtonImage
+    {
+        get { return myButtonImage; }
+        set { myButtonImage = value; }
+    }
+    private Image mask;
+
+    public Image Mask
+    {
+        get { return mask; }
+        set { mask = value; }
+    }
+
+    public Text CoolDownText;
+    private Sprite coolDownSprite;
+    private Sprite coolDownMaskSprite;
     private AudioSource abilitySource;
-    private float coolDownDuration=10;
+    private float coolDownDuration=10f;
     private float nextReadyTime;
-    private float coolDownTimeLeft;
+    private float coolDownTimeLeft=10f;
     private bool coolDownCompleted;
 
     public bool CoolDownCompleted
@@ -33,6 +48,10 @@ public class AbilityCoolDown : MonoBehaviour {
     }
     public void FixedUpdate()
     {
+        myButtonImage.sprite = coolDownSprite;
+        mask.sprite = coolDownMaskSprite;
+        mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+
         coolDownCompleted = (Time.time > nextReadyTime);
         CoolDown();
     }
@@ -57,10 +76,9 @@ public class AbilityCoolDown : MonoBehaviour {
     {
         ability = selectedAbility;
         var sounds = GetComponents<AudioSource>();
-
-        //myButtonImage = GetComponent<Image>();
         abilitySource = sounds[0];
-        //myButtonImage.sprite = ability.aSprite;
+       coolDownSprite = ability.aSprite;
+        coolDownMaskSprite = ability.aMaskSprite;
         //coolDownDuration = ability.aCoolDown;
         ability.Initialize();
         //AbilityReady();
@@ -78,7 +96,8 @@ public class AbilityCoolDown : MonoBehaviour {
         coolDownTimeLeft -= Time.deltaTime;
         //float cd = Mathf.Round(coolDownTimeLeft);
         //CoolDownText.text = cd.ToString();
-        //Mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+        mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+        
 
     }
 
@@ -88,6 +107,7 @@ public class AbilityCoolDown : MonoBehaviour {
         abilitySource.PlayOneShot(ability.aSound, .5f);
         nextReadyTime = coolDownDuration + Time.time;
         coolDownTimeLeft = coolDownDuration;
+        mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
 
 
     }

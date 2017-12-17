@@ -14,4 +14,4 @@ MonoBehaviour:
   characterName: Vanya
   cSprite: {fileID: 21300000, guid: 8deb7e1e53b2c8541b3ee25e61964eda, type: 3}
   characterAbilities:
-  - {fileID: 11400000, guid: a0c95b85a229a6542a887f9028b85a98, type: 2}
+  - {fileID: 11400000, guid: 93281b486f5e7074db66416c7fde6fdd, type: 2}

@@ -35,11 +35,25 @@ public class GameController : MonoBehaviour {
         GameObject character = GameObject.FindGameObjectWithTag("Player");
         character.GetComponent<Rigidbody2D>().gravityScale = 1;
         Score score = character.GetComponent<Score>();
+        AbilityCoolDown coolDown = character.GetComponent<AbilityCoolDown>();
         foreach (var obj in FindObjectsOfType<Text>())
         {
-            if (obj.tag == "ScoreText")
-               score.Text = obj;
+            if (obj.tag == "ScoreText") 
+            score.Text = obj;
         }
+        foreach (var obj in FindObjectsOfType<Image>())
+        {
+            if (obj.tag == "CoolDownIcon")
+                coolDown.MyButtonImage = obj;
+            if (obj.tag == "CoolDownMask")
+            {
+                coolDown.Mask = obj;
+               // obj.fillAmount = coolDown.Mask.fillAmount;
+            }
+
+        }
+
+
     }
 
     void UpdateText()

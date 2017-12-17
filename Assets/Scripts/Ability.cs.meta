@@ -1,11 +1,14 @@
 fileFormatVersion: 2
 guid: 56a2bd3880c88304ea954ca54b41ebb5
-timeCreated: 1512945566
+timeCreated: 1513503881
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - aSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - aSound: {instanceID: 0}
+  - aImage: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
