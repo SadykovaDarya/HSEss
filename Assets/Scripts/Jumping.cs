@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Jumping : MonoBehaviour {
 
-	Transform target;
 	public float force;
 	public Collider2D platform;
 	public bool isTouching;

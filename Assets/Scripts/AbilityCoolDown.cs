@@ -17,6 +17,37 @@ public class AbilityCoolDown : MonoBehaviour {
     private bool coolDownCompleted;
 
 
+    public Sprite CoolDownSprite
+    {
+        get { return coolDownSprite; }
+        set { coolDownSprite = value; }
+    }
+
+
+    public Sprite CoolDownMaskSprite
+    {
+        get { return coolDownMaskSprite; }
+        set { coolDownMaskSprite = value; }
+    }
+
+
+    public float CoolDownTimeLeft
+    {
+        get { return coolDownTimeLeft; }
+        set { coolDownTimeLeft = value; }
+    }
+
+    public float CoolDownDuration
+    {
+        get { return coolDownDuration; }
+        set { coolDownDuration = value; }
+    }
+
+
+
+
+
+
     public Image MyButtonImage
     {
         get { return myButtonImage; }
@@ -46,16 +77,11 @@ public class AbilityCoolDown : MonoBehaviour {
 
     public void FixedUpdate()
     {
-      
-        mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
+
         coolDownCompleted = (Time.time > nextReadyTime);
         CoolDown();
     }
-    private void Update()
-    {
-        myButtonImage.sprite = coolDownSprite;
-        mask.sprite = coolDownMaskSprite;
-    }
+
 
 
     public void Initialize(Ability selectedAbility)
@@ -74,7 +100,6 @@ public class AbilityCoolDown : MonoBehaviour {
     private void CoolDown()
     {
         coolDownTimeLeft -= Time.deltaTime;
-        mask.fillAmount = (coolDownTimeLeft / coolDownDuration);
 
     }
 

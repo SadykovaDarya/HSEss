@@ -34,10 +34,14 @@ public class GameController : MonoBehaviour {
         foreach (var obj in FindObjectsOfType<Image>())
         {
             if (obj.tag == "CoolDownIcon")
+            {
                 coolDown.MyButtonImage = obj;
+                coolDown.MyButtonImage.sprite = coolDown.CoolDownSprite;
+            }
             if (obj.tag == "CoolDownMask")
             {
                 coolDown.Mask = obj;
+                coolDown.Mask.sprite = coolDown.CoolDownMaskSprite;
 
             }
 
@@ -53,6 +57,8 @@ public class GameController : MonoBehaviour {
         UpdateText();
         GameObject character = GameObject.FindGameObjectWithTag("Player");
         character.GetComponent<Rigidbody2D>().gravityScale = 1;
+        AbilityCoolDown coolDown = character.GetComponent<AbilityCoolDown>();
+        coolDown.Mask.fillAmount = coolDown.CoolDownTimeLeft / coolDown.CoolDownDuration;
 
 
     }

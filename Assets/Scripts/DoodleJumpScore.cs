@@ -7,20 +7,12 @@ using UnityEngine.UI;
 public class DoodleJumpScore : MonoBehaviour {
 
     // Use this for initialization
-    private int score;
     float DistanceTravelled = -10f;
     Vector3 lastPosition;
 
    public  Text ScoreText;
 
-    //public Text Text
-    //{
-    //    get { return ScoreText; }
-    //    set { ScoreText = value; }
-    //}
     void Start () {
-
-        score = 0;
         UpdateScore();
 
     }
