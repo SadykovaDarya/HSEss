@@ -12,7 +12,9 @@ public class PortalBehavior : MonoBehaviour {
     GameObject clone;
 	// Update is called once per frame
     void Start() {
-        backGroundWidth = GameObject.Find("background1").GetComponent<SpriteRenderer>().bounds.extents.x * 2;
+        try{
+        backGroundWidth = GameObject.Find("background1").GetComponent<SpriteRenderer>().bounds.extents.x * 2; 
+        } catch { }
     }
 
     void OnTriggerEnter2D(Collider2D collision) {

@@ -230,6 +230,7 @@
     <Compile Include="Assets\Scripts\DAbility.cs" />
     <Compile Include="Assets\Scripts\DAbilityTriggerable.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts\DoodleJumpScore.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Jumping.cs" />
     <Compile Include="Assets\Scripts\markBehavior.cs" />

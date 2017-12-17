@@ -11,9 +11,8 @@ public class SAbility : Ability
 
     public override void Initialize()
     {
+        player = GameObject.FindWithTag("Player");
         aName = "Skip";
         dAtrigger = player.GetComponent<Score>();
-
-
     }
 }

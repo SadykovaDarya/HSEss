@@ -19,7 +19,10 @@ public class Score : MonoBehaviour {
 
     private void Start()
     {
-      
+        if (ScoreText = null)
+            foreach (var text in FindObjectsOfType<Text>())
+                if (text.tag == "ScoreText")
+                    ScoreText = text;
         score = 0;
         UpdateScore();
     }
@@ -27,8 +30,8 @@ public class Score : MonoBehaviour {
 
     public void UpdateScore()
     {
-    
-        ScoreText.text = "Score:\n" + score;
+        if(ScoreText != null)
+            ScoreText.text = "Score:\n" + score;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
