@@ -22,12 +22,12 @@ public class PortalBehavior : MonoBehaviour {
             else
                 clone = Instantiate(gameObject, new Vector3(transform.position.x + backGroundWidth, transform.position.y), new Quaternion());
             activePlayers++;
-            clone.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
         }
     }
 
     void FixedUpdate() {
-        if(clone != null){
+		if(clone != null){
+			clone.GetComponent<Rigidbody2D>().velocity = gameObject.GetComponent<Rigidbody2D>().velocity;
             clone.transform.position = new Vector3(clone.transform.position.x, transform.position.y);
         }
     }
